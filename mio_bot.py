@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import json
+import webbrowser
+
 import telepot
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
@@ -22,10 +24,10 @@ def on_chat_message(msg):
         bot.sendMessage(chat_id, 'Pure a te %s' % txt)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
-         InlineKeyboardButton(text='INFO', callback_data='info')],
+         InlineKeyboardButton(text='WIKIPEDIA', callback_data='wikipedia')],
         [InlineKeyboardButton(text='ORA LOCALE', callback_data='ora locale')],
     ])
-    bot.sendMessage(chat_id, 'Usa i tasti sotto', reply_markup=keyboard)
+    bot.sendMessage(chat_id, 'Usa i tasti sotto %s' %txt, reply_markup=keyboard)
 
 
 def on_callback_query(msg):
@@ -39,9 +41,10 @@ def on_callback_query(msg):
             char = random.choice(characters)
             password = password + char
         bot.sendMessage(chat_id, password)
-    #elif query_data == 'info':
-        #info = json.dumps(bot.getUpdates(), sort_keys=True, indent=4)
-        #bot.sendMessage(chat_id, info)
+    elif query_data == 'wikipedia':
+        webbrowser.open('https://it.wikipedia.org/wiki/Wikipedia_in_italiano')
+        info = 'son bravooo'
+        bot.sendMessage(chat_id, info)
     elif query_data == 'ora locale':
         ts = time.time()
         bot.sendMessage(chat_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
