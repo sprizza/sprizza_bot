@@ -12,7 +12,7 @@ import datetime
 import string
 import random
 
-TOKEN = ''
+
 bot = telepot.Bot(TOKEN)
 
 def on_chat_message(msg):
