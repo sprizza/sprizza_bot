@@ -1,1 +1,1 @@
-web: python mio_bot.py
+web: node index.js
