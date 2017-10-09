@@ -26,7 +26,7 @@ def on_chat_message(msg):
          InlineKeyboardButton(text='WIKIPEDIA', callback_data='wikipedia')],
         [InlineKeyboardButton(text='ORA LOCALE', callback_data='ora locale')],
     ])
-    bot.sendMessage(chat_id, 'Usa i tasti sotto %s' %txt, reply_markup=keyboard)
+    bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
 
 
 def on_callback_query(msg):
