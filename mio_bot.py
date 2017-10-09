@@ -22,11 +22,12 @@ def on_chat_message(msg):
         name = msg["from"]["first_name"]
         txt = msg['text']
         bot.sendMessage(chat_id, 'ciao %s, non sono capace a fare tanto ancora!' % name)
-        bot.sendMessage(chat_id, 'Pure a te %s' % txt)
+        #bot.answerCallbackQuery(query_id, 'Pure a te %s' % txt)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
-            InlineKeyboardButton(text='?', callback_data='?')],
-        [InlineKeyboardButton(text='ORA LOCALE', callback_data='ora locale')],
+         InlineKeyboardButton(text='?', callback_data='?')],
+        [InlineKeyboardButton(text='NON SO FARE NIENTE', callback_data='non so fare niente'),
+         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
     ])
     bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
 
@@ -42,13 +43,19 @@ def on_callback_query(msg):
             char = random.choice(characters)
             password = password + char
         bot.sendMessage(chat_id, password)
+        bot.answerCallbackQuery(query_id, password)
     elif query_data == '?':
         info = 'son bravooo'
         bot.sendMessage(chat_id, info)
-    elif query_data == 'ora locale':
-        ts = time.time()
-        bot.sendMessage(chat_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
-        bot.answerCallbackQuery(query_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
+        bot.answerCallbackQuery(query_id, 'Ciao')
+    elif query_data == 'non so fare niente':
+        ts = 'non so fare niente'
+        bot.sendMessage(chat_id, ts)
+        bot.answerCallbackQuery(query_id, 'Aaaa....')
+    elif query_data == 'niente':
+        a = 'booo....'
+        bot.sendMessage(chat_id, a)
+        bot.answerCallbackQuery(query_id, 'Chissà')
 
 MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query}).run_as_thread()
 
