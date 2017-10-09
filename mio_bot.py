@@ -3,7 +3,6 @@
 
 import json
 import webbrowser
-
 import requests
 import telepot
 from telepot.loop import MessageLoop
