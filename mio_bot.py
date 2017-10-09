@@ -28,6 +28,12 @@ def on_chat_message(msg):
          InlineKeyboardButton(text='?', callback_data='?')],
         [InlineKeyboardButton(text='NON SO FARE NIENTE', callback_data='non so fare niente'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
+        [InlineKeyboardButton(text='!', callback_data='!'),
+         InlineKeyboardButton(text='!', callback_data='!')],
+        [InlineKeyboardButton(text='!', callback_data='!'),
+         InlineKeyboardButton(text='!', callback_data='!')],
+        [InlineKeyboardButton(text='!', callback_data='!'),
+         InlineKeyboardButton(text='!', callback_data='!')],
     ])
     bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
 
