@@ -11,7 +11,7 @@ import time
 import datetime
 import string
 import random
-
+url = "https://api.telegram.org/bot444957336:AAFnuueZrO_xiTBQ02-zNgSqI7ylSVkR65Q/"
 TOKEN = '444957336:AAFnuueZrO_xiTBQ02-zNgSqI7ylSVkR65Q'
 bot = telepot.Bot(TOKEN)
 
