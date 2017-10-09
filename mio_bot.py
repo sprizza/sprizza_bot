@@ -40,8 +40,7 @@ def on_callback_query(msg):
             char = random.choice(characters)
             password = password + char
         bot.sendMessage(chat_id, password)
-    elif query_data == 'wikipedia':
-        webbrowser.open('https://it.wikipedia.org/wiki/Wikipedia_in_italiano')
+    elif query_data == '?':
         info = 'son bravooo'
         bot.sendMessage(chat_id, info)
     elif query_data == 'ora locale':
