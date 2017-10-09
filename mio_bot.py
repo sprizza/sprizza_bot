@@ -53,4 +53,4 @@ MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query})
 print('Si parte......')
 
 while 1:
-    time.sleep(10)
+    time.sleep(1)
