@@ -3,6 +3,8 @@
 
 import json
 import webbrowser
+
+import requests
 import telepot
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
@@ -23,7 +25,7 @@ def on_chat_message(msg):
         bot.sendMessage(chat_id, 'Pure a te %s' % txt)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
-         InlineKeyboardButton(text='WIKIPEDIA', callback_data='wikipedia')],
+            InlineKeyboardButton(text='?', callback_data='?')],
         [InlineKeyboardButton(text='ORA LOCALE', callback_data='ora locale')],
     ])
     bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
@@ -49,8 +51,8 @@ def on_callback_query(msg):
         #bot.answerCallbackQuery(query_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
 
 MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query}).run_as_thread()
-print('Si parte......')
+
 
 while 1:
-    time.sleep(1)
+    time.sleep(0)
 
