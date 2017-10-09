@@ -3,7 +3,6 @@
 
 import json
 import webbrowser
-
 import telepot
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
@@ -12,7 +11,7 @@ import datetime
 import string
 import random
 
-
+TOKEN = '444957336:AAFnuueZrO_xiTBQ02-zNgSqI7ylSVkR65Q'
 bot = telepot.Bot(TOKEN)
 
 def on_chat_message(msg):
