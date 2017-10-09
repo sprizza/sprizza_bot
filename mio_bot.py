@@ -47,7 +47,7 @@ def on_callback_query(msg):
     elif query_data == 'ora locale':
         ts = time.time()
         bot.sendMessage(chat_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
-        #bot.answerCallbackQuery(query_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
+        bot.answerCallbackQuery(query_id, text=datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S'))
 
 MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query}).run_as_thread()
 
