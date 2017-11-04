@@ -28,7 +28,7 @@ def on_chat_message(msg):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
          InlineKeyboardButton(text='?', callback_data='?')],
-        [InlineKeyboardButton(text='NON SO FARE NIENTE', callback_data='non so fare niente'),
+        [InlineKeyboardButton(text='APRO PAGINA MUSICA YUTUBE', callback_data='apro pagina musica yutube'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
         [InlineKeyboardButton(text='!', callback_data='!'),
          InlineKeyboardButton(text='!', callback_data='!')],
@@ -56,10 +56,8 @@ def on_callback_query(msg):
         info = 'son bravooo'
         bot.sendMessage(chat_id, info)
         bot.answerCallbackQuery(query_id, 'Ciao')
-    elif query_data == 'non so fare niente':
-        ts = 'non so fare niente'
-        bot.sendMessage(chat_id, ts)
-        bot.answerCallbackQuery(query_id, 'Aaaa....')
+    elif query_data == 'apro pagina musica yutube':
+        webbrowser.open('https://www.youtube.com/results?search_query=musica')
     elif query_data == 'niente':
         a = 'booo....'
         bot.sendMessage(chat_id, a)
