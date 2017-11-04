@@ -69,5 +69,5 @@ MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query})
 
 
 while True:
-    time.sleep(0.02)
+    time.sleep(10)
 
