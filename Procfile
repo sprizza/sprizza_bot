@@ -1,1 +1,1 @@
-web: python mio_bot.py
+web: python "mio_bot.py"
