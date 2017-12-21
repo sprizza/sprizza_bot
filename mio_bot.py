@@ -30,12 +30,12 @@ def on_chat_message(msg):
          InlineKeyboardButton(text='?', callback_data='?')],
         [InlineKeyboardButton(text='APRO PAGINA MUSICA YUTUBE', callback_data='apro pagina musica yutube'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
-        [InlineKeyboardButton(text='!', callback_data='!'),
-         InlineKeyboardButton(text='!', callback_data='!')],
-        [InlineKeyboardButton(text='!', callback_data='!'),
-         InlineKeyboardButton(text='!', callback_data='!')],
-        [InlineKeyboardButton(text='!', callback_data='!'),
-         InlineKeyboardButton(text='!', callback_data='!')],
+        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
+         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
+        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
+         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
+        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
+         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
     ])
     bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
 
