@@ -27,8 +27,8 @@ def on_chat_message(msg):
         #bot.answerCallbackQuery(query_id, 'Pure a te %s' % txt)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
-         InlineKeyboardButton(text='?', callback_data='?')],
-        [InlineKeyboardButton(text='APRO PAGINA MUSICA YUTUBE', callback_data='apro pagina musica yutube'),
+         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
+        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
         [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
@@ -52,16 +52,7 @@ def on_callback_query(msg):
             password = password + char
         bot.sendMessage(chat_id, password)
         bot.answerCallbackQuery(query_id, password)
-    elif query_data == '?':
-        info = 'son bravooo'
-        bot.sendMessage(chat_id, info)
-        bot.answerCallbackQuery(query_id, 'Ciao')
-    elif query_data == 'apro pagina musica yutube':
-        webbrowser.open('https://www.youtube.com/results?search_query=musica')
-    elif query_data == 'niente':
-        a = 'booo....'
-        bot.sendMessage(chat_id, a)
-        bot.answerCallbackQuery(query_id, 'Chissà')
+    
 
 MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query}).run_as_thread()
 
