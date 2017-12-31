@@ -28,7 +28,7 @@ def on_chat_message(msg):
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
     ])
-    bot.sendMessage(chat_id, 'Usa i tasti sotto %s sempre se vuoi' % name, reply_markup=keyboard)
+    bot.sendMessage(chat_id, 'Se vuoi %s usa i tasti sotto' % name, reply_markup=keyboard)
 
 
 def on_callback_query(msg):
