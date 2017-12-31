@@ -28,14 +28,6 @@ def on_chat_message(msg):
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
-        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
-         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
-        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
-         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
-        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
-         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
-        [InlineKeyboardButton(text='NIENTE', callback_data='niente'),
-         InlineKeyboardButton(text='NIENTE', callback_data='niente')],
     ])
     bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
 
@@ -58,5 +50,5 @@ MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query})
 
 
 while True:
-    time.sleep(10)
+    time.sleep(01)
 
