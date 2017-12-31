@@ -23,12 +23,12 @@ def on_chat_message(msg):
     if content_type == 'text':
         name = msg["from"]["first_name"]
         #txt = msg['text']
-        bot.sendMessage(chat_id, 'ciao %s, non sono capace a fare tanto ancora!' % name)
+        bot.sendMessage(chat_id, 'Ciao %s, non sono capace a fare tanto ancora!' % name)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
     ])
-    bot.sendMessage(chat_id, 'Usa i tasti sotto %s se vuoi' % name, reply_markup=keyboard)
+    bot.sendMessage(chat_id, 'Usa i tasti sotto %s sempre se vuoi' % name, reply_markup=keyboard)
 
 
 def on_callback_query(msg):
