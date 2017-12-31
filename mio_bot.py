@@ -22,9 +22,8 @@ def on_chat_message(msg):
     content_type, chat_type, chat_id = telepot.glance(msg)
     if content_type == 'text':
         name = msg["from"]["first_name"]
-        txt = msg['text']
+        #txt = msg['text']
         bot.sendMessage(chat_id, 'ciao %s, non sono capace a fare tanto ancora!' % name)
-        #bot.answerCallbackQuery(query_id, 'Pure a te %s' % txt)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text='PASSWORD TOSTA', callback_data='password tosta'),
          InlineKeyboardButton(text='NIENTE', callback_data='niente')],
