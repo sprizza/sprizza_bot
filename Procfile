@@ -1,2 +1,2 @@
-web: python mio_bot.py node keystone.js -p $PORT
+web: python mio_bot.py $PORT
 
