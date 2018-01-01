@@ -44,7 +44,9 @@ def on_callback_query(msg):
         bot.sendMessage(chat_id, password)
         bot.answerCallbackQuery(query_id, password)
     if query_data == 'niente':
-        print 'ciao'
+        niente = 'non mi hanno ancora insegnato niente'
+        bot.sendMessage(chat_id, niente)
+        bot.answerCallbackQuery(query_id, niente)
     
 
 MessageLoop(bot, {'chat': on_chat_message, 'callback_query': on_callback_query}).run_as_thread()
