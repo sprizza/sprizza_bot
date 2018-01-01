@@ -1,2 +1,2 @@
-web: python3 mio_bot.py
+web: python mio_bot.py
 
