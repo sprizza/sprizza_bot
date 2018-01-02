@@ -1,6 +1,2 @@
-web: python mio_bot.py ${PORT}
-mio_bot.py:
-import os
-from app import app
-port = int(os.environ.get('PORT', 33507))
-app.run(host='0.0.0.0', port=port, debug=False)
+web: (python -m http.server $PORT &) && (python mio_bot/mio_bot.py)
+
