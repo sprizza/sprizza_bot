@@ -1,7 +1,16 @@
-web: python mio_bot.py --port=${PORT}
-mio_bot.py:
-import os
-from intro_to_flask import app
+web: python mio_bot.py --log file -
+mio_bot.py
+import sys
+import requests
+from apscheduler.schedulers.blocking import BlockingScheduler
 
-port = int(os.environ.get("PORT", 5000))
-app.run(debug=True, host='0.0.0.0', port=port)
+sched = BlockingScheduler()
+
+@sched.scheduled_job('interval', minutes=3)
+def timed_job():
+    try:
+        request = requests.get(url='https://royal-tag-services.herokuapp.com/api/sms-service/scheduler/')
+    except Exception as e:
+        print >>sys.stderr, 'scheduler request failed'
+
+sched.start()
