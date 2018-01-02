@@ -1,2 +1,2 @@
-web: python mio_bot.py $PORT
+web: python gunicorn mio_bot.py ${PORT}
 
