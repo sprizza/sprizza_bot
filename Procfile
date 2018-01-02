@@ -1,4 +1,5 @@
-web: python mio_bot.py 
+web: python mio_bot.py --port=$PORT
+mio_bot.py:
 import os
 from intro_to_flask import app
 
