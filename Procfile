@@ -1,4 +1,4 @@
-web: python mio_bot.py --log file -
+web: python mio_bot.py --port=${PORT}
 mio_bot.py
 import sys
 import requests
