@@ -1,2 +1,2 @@
-web: python mio_bot.py --port=$ PORT
+web: python mio_bot.py --port=${PORT}
 
