@@ -3,7 +3,7 @@
   "description": "A barebones Python app, which can easily be deployed to Heroku.",
   "image": "heroku/python",
   "repository": "https://git.heroku.com/sprizzabot.git",
-  "keywords": ["python", "django", "gunicorn", "psycopg2", "whitenoise", "requests", "telepot" ],
+  "keywords": ["python", "psycopg2", "whitenoise", "telepot" ],
   "addons": [ "heroku-postgresql" ],
   "env": {
     "SECRET_KEY": {
